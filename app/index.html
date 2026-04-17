@@ -78,16 +78,15 @@
             </header>
 
             <div class="game-wrap">
-                <canvas id="board" width="480" height="480" aria-label="Snake game board"></canvas>
+                <canvas id="board" width="480" height="480" aria-label="Driving shooter game board"></canvas>
 
                 <div id="overlay" class="overlay">
                     <div class="overlay-inner">
-                        <h2 id="overlay-title">Ready?</h2>
+                        <h2 id="overlay-title">Ready to drive?</h2>
                         <p id="overlay-text">
-                            Use <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>
-                            or arrow keys. <kbd>Space</kbd> to pause.
+                            Drive with <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or arrows. Shoot with <kbd>Space</kbd>.
                         </p>
-                        <button id="start-btn" class="btn primary">Start</button>
+                        <button id="start-btn" class="btn primary">Drive</button>
                     </div>
                 </div>
             </div>
@@ -99,6 +98,7 @@
                     <button class="pad" data-dir="down" aria-label="Down">▼</button>
                     <button class="pad" data-dir="right" aria-label="Right">▶</button>
                 </div>
+                <button class="pad fire" data-dir="fire" aria-label="Fire">FIRE</button>
             </div>
         </section>
     </main>

@@ -337,6 +337,15 @@ kbd {
     transform: scale(0.95);
 }
 
+.pad.fire {
+    width: 180px;
+    margin-top: 8px;
+    background: linear-gradient(135deg, #ff6b7a 0%, #ffd36b 100%);
+    color: #0b0f1a;
+    font-weight: 700;
+    border-color: transparent;
+}
+
 /* Show on-screen d-pad only on touch devices */
 @media (hover: hover) and (pointer: fine) {
     .controls {
