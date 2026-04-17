@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Arcade — Login & Play</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="stars" aria-hidden="true"></div>
+
+    <main id="app">
+        <!-- Login screen -->
+        <section id="login-screen" class="screen active">
+            <div class="card">
+                <h1 class="logo">
+                    <span class="logo-dot"></span>SNAKE<span class="logo-accent">ARCADE</span>
+                </h1>
+                <p class="tagline">Sign in. Eat dots. Don't bite yourself.</p>
+
+                <form id="login-form" autocomplete="off" novalidate>
+                    <label class="field">
+                        <span>Username</span>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            minlength="2"
+                            maxlength="20"
+                            required
+                            placeholder="your hero name"
+                        />
+                    </label>
+
+                    <label class="field">
+                        <span>Password</span>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            minlength="4"
+                            required
+                            placeholder="at least 4 characters"
+                        />
+                    </label>
+
+                    <p id="login-error" class="error" role="alert" aria-live="polite"></p>
+
+                    <button type="submit" class="btn primary">Play</button>
+                    <p class="hint">
+                        New here? Any username + 4+ char password creates an account.
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Game screen -->
+        <section id="game-screen" class="screen">
+            <header class="top-bar">
+                <div class="brand">
+                    <span class="logo-dot"></span>SNAKE<span class="logo-accent">ARCADE</span>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-label">Player</span>
+                        <span class="stat-value" id="player-name">—</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Score</span>
+                        <span class="stat-value" id="score">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Best</span>
+                        <span class="stat-value" id="best">0</span>
+                    </div>
+                    <button id="logout-btn" class="btn ghost">Logout</button>
+                </div>
+            </header>
+
+            <div class="game-wrap">
+                <canvas id="board" width="480" height="480" aria-label="Snake game board"></canvas>
+
+                <div id="overlay" class="overlay">
+                    <div class="overlay-inner">
+                        <h2 id="overlay-title">Ready?</h2>
+                        <p id="overlay-text">
+                            Use <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>
+                            or arrow keys. <kbd>Space</kbd> to pause.
+                        </p>
+                        <button id="start-btn" class="btn primary">Start</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="pad" data-dir="up" aria-label="Up">▲</button>
+                <div class="pad-row">
+                    <button class="pad" data-dir="left" aria-label="Left">◀</button>
+                    <button class="pad" data-dir="down" aria-label="Down">▼</button>
+                    <button class="pad" data-dir="right" aria-label="Right">▶</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="auth.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
